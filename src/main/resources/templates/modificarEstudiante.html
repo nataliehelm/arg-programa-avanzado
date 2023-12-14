@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Estudiante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-light text-dark">
+
+<div class="container mt-5">
+    <h4 class="mb-4">Modificar Estudiante</h4>
+    <hr>
+    <form class="needs-validation" th:action="@{/estudiantes/guardarModificacionEstudiante}" method="post" th:object="${estudiante}">
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input class="form-control" type="text" id="nombre" th:field="*{nombre}" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input class="form-control" type="text" id="apellido" th:field="*{apellido}" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input class="form-control" type="text" id="email" th:field="*{email}" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-d5F/MrBcGKO4u8HxvG6L10rwe5MzV0nJwW5WpeXWk1lqtk+tiD6U5crU6jrMI9jD" crossorigin="anonymous"></script>
+</body>
+
+</html>
